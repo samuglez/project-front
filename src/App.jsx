@@ -7,6 +7,7 @@ import Characters from './pages/Characters';
 import About from './pages/About';
 import ErrorPage from './pages/ErrorPage';
 import Footer from './components/Footer/Footer';
+import CharactersDetails from './pages/CharactersDetails';
 // import { use, useEffect } from 'react';
 const apiUrl ="http://localhost:5005/characters"
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/characters" element={<Characters apiUrl={apiUrl}/>} />
+      <Route path="/characters/:id" element={<CharactersDetails apiUrl={apiUrl}/>} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={ <ErrorPage /> } />
       </Routes>
