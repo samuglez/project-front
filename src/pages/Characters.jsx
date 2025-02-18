@@ -23,13 +23,18 @@ export default function Characters({ apiUrl }) {
         {characters.map((character) => {
           return (
             <div className="character" key={character.id}>
-                <Link to={`/character/${character.id}`}></Link>
+                
+                
               <img src={character.image} />
               <h3>{character.name}</h3>
+              <Link to={`/characters/${character.id}`}>
+              <button className="">More Info</button>
+              </Link>
             </div>
           );
         })}
       </div>
     </div>
+  
   );
 }

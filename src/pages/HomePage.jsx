@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import "./HomePage.css";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
   const [name, setName] = useState("");
@@ -9,6 +11,7 @@ export default function HomePage() {
   const [job, setJob] = useState("");
   const [crew, setCrew] = useState("");
   const [fruit, setFruit] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,6 +30,7 @@ export default function HomePage() {
       .post("http://localhost:5005/characters", newCharacter)
       .then((response) => {
         console.log("Personaje agregado:", response.data);
+        navigate("/characters");
       })
       .catch((error) => {
         console.error("Error al agregar personaje:", error);
@@ -35,11 +39,11 @@ export default function HomePage() {
 
   return (
     <div>
-      <h1>Página de Inicio</h1>
-
-      <form onSubmit={handleSubmit}>
+<div className="homePageContainer">
+<form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Nombre:</label>
+          <h2>New Character</h2>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
             id="name"
@@ -50,7 +54,7 @@ export default function HomePage() {
         </div>
 
         <div>
-          <label htmlFor="image">Imagen:</label>
+          <label htmlFor="image">Image:</label>
           <input
             type="url"
             id="image"
@@ -61,7 +65,7 @@ export default function HomePage() {
         </div>
 
         <div>
-          <label htmlFor="age">Edad:</label>
+          <label htmlFor="age">Age:</label>
           <input
             type="number"
             id="age"
@@ -72,7 +76,7 @@ export default function HomePage() {
         </div>
 
         <div>
-          <label htmlFor="bounty">Recompensa:</label>
+          <label htmlFor="bounty">Bounty:</label>
           <input
             type="number"
             id="bounty"
@@ -83,7 +87,7 @@ export default function HomePage() {
         </div>
 
         <div>
-          <label htmlFor="job">Trabajo:</label>
+          <label htmlFor="job">Job:</label>
           <input
             type="text"
             id="job"
@@ -94,7 +98,7 @@ export default function HomePage() {
         </div>
 
         <div>
-          <label htmlFor="crew">Tripulación:</label>
+          <label htmlFor="crew">Crew:</label>
           <input
             type="text"
             id="crew"
@@ -104,7 +108,7 @@ export default function HomePage() {
           />
         </div>
         <div>
-          <label htmlFor="fruit">Fruta:</label>
+          <label htmlFor="fruit">Fruit:</label>
           <input
             type="text"
             id="fruit"
@@ -114,8 +118,10 @@ export default function HomePage() {
           />
         </div>
 
-        <button type="submit">Añadir Personaje</button>
+        <button type="submit">Add Character</button>
       </form>
+</div>
+      
     </div>
   );
 }
