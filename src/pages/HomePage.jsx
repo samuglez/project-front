@@ -3,7 +3,7 @@ import axios from "axios";
 import "./HomePage.css";
 import { useNavigate } from "react-router-dom";
 
-export default function HomePage() {
+export default function HomePage({apiUrl}) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [age, setAge] = useState("");
@@ -27,7 +27,7 @@ export default function HomePage() {
     };
 
     axios
-      .post(`${import.meta.env.VITE_BACK_URL}`, newCharacter)
+      .post(apiUrl, newCharacter)
       .then((response) => {
         console.log("Personaje agregado:", response.data);
         navigate("/characters");

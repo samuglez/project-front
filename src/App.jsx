@@ -18,7 +18,7 @@ function App() {
     <>
     <NavBar/>
       <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<HomePage apiUrl={apiUrl} />} />
       <Route path="/characters" element={<Characters apiUrl={apiUrl}/>} />
       <Route path="/characters/:id" element={<CharactersDetails apiUrl={apiUrl}/>} />
       <Route path="/about" element={<About />} />
