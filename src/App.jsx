@@ -9,7 +9,7 @@ import ErrorPage from './pages/ErrorPage';
 import Footer from './components/Footer/Footer';
 import CharactersDetails from './pages/CharactersDetails';
 // import { use, useEffect } from 'react';
-const apiUrl ="http://localhost:5005/characters"
+const apiUrl =`${import.meta.env.VITE_BACK_URL}/characters`
 
 
 function App() {
