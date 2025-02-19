@@ -27,7 +27,7 @@ export default function HomePage() {
     };
 
     axios
-      .post("http://localhost:5005/characters", newCharacter)
+      .post(`${import.meta.env.VITE_BACK_URL}`, newCharacter)
       .then((response) => {
         console.log("Personaje agregado:", response.data);
         navigate("/characters");
