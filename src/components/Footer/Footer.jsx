@@ -3,7 +3,7 @@ export default function Footer() {
     return(
         <>
         <div className="footer">
-        <h3>Footer</h3>
+        <h3>© Monkey D. Cloud 2025</h3>
         </div>
         
         </>

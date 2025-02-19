@@ -78,7 +78,7 @@ export default function HomePage() {
         <div>
           <label htmlFor="bounty">Bounty:</label>
           <input
-            type="number"
+            type="text"
             id="bounty"
             value={bounty}
             onChange={(e) => setBounty(e.target.value)}
